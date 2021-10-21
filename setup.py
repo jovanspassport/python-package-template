@@ -7,11 +7,11 @@ import typing
 import setuptools
 
 here = os.path.abspath(os.path.dirname(__file__))
-with open(os.path.join(here, "README.md")) as fh:
+with open(os.path.join(here, "README.md"), encoding="utf8") as fh:
     README = fh.read()
-with open(os.path.join(here, "LICENSE.md")) as fh:
+with open(os.path.join(here, "LICENSE.md"), encoding="utf8") as fh:
     LICENSE = fh.read()
-with open(os.path.join(here, "package", "__init__.py")) as fh:
+with open(os.path.join(here, "package", "__init__.py"), encoding="utf8") as fh:
     module = ast.parse(next(filter(lambda line: line.startswith("__version__"), fh)))
     assign = typing.cast(ast.Assign, module.body[0])
     # See also: https://github.com/relekang/python-semantic-release/issues/388
@@ -36,6 +36,7 @@ setuptools.setup(
         "Development Status :: 1 - Planning",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
     ],
     keywords="",
     project_urls={

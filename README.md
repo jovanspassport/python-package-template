@@ -10,7 +10,7 @@ The badges above give you an idea of what this project template provides. It’s
 
 ### Typing
 
-The package requires a minimum of [Python 3.9](https://www.python.org/downloads/release/python-390/) and all code requires comprehensive [typing](https://docs.python.org/3/library/typing.html). The [mypy](http://mypy-lang.org/) static type checker is invoked by a git hook and through a Github Action to enforce continuous type checks.
+The package requires a minimum of [Python 3.9](https://www.python.org/downloads/release/python-390/) and supports [Python 3.10](https://www.python.org/downloads/release/python-3100/). All code requires comprehensive [typing](https://docs.python.org/3/library/typing.html). The [mypy](http://mypy-lang.org/) static type checker is invoked by a git hook and through a Github Action to enforce continuous type checks.
 
 ### Quality Assurance
 
@@ -60,7 +60,7 @@ If you’d like to start your own Python project from scratch, you can either co
 
 To develop your new package, create a [virtual environment](https://docs.python.org/3/tutorial/venv.html) and install its `dev`,  `test` and `docs` dependencies:
 ```bash
-python3.9 -m venv .
+python3.10 -m venv .
 source ./bin/activate
 pip install --upgrade pip
 pip install --editable .[dev,test,docs]
@@ -91,16 +91,16 @@ pytest --cov package tests
 and measures how much code in the `package/` folder is covered by tests:
 ```
 ============================= test session starts =============================
-platform darwin -- Python 3.9.7, pytest-6.2.4, py-1.10.0, pluggy-0.13.1 -- ...
+platform darwin -- Python 3.10.0, pytest-6.2.5, py-1.10.0, pluggy-1.0.0 -- ...
 cachedir: .pytest_cache
 hypothesis profile 'default' -> database=DirectoryBasedExampleDatabase('/.../package/.hypothesis/examples')
 rootdir: /.../package, configfile: pyproject.toml
-plugins: hypothesis-6.21.6, cov-2.12.1
+plugins: hypothesis-6.24.0, cov-3.0.0
 collected 1 item  
 
 tests/test_something.py::test_something PASSED                           [100%]
 
----------- coverage: platform darwin, python 3.9.7-final-0 -----------
+---------- coverage: platform darwin, python 3.10.0-final-0 -----------
 Name                   Stmts   Miss  Cover   Missing
 ----------------------------------------------------
 package/__init__.py        1      0   100%
